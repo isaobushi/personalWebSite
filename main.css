@@ -31,7 +31,6 @@
   display: inline-block;
   font-size: 4rem;
   transition: all, 2s ease-in-out;
-  transition-delay: 0s;
 }
 
 
@@ -46,7 +45,6 @@
   animation-delay: .3s;
   margin-left: 15rem;
   position: fixed;
-  /* clip-path: polygon(50% 0, 51% 0, 100% 100%, 0 100%) */
 }
 
 
@@ -68,9 +66,53 @@
   display: none;
   border: 1px solid black;
   height: 0vh;
-  width: 30vw;
+  width: 0vw;
   opacity: 0;
   box-shadow: none;
   margin: .1rem;
   transition: all, .5s ease-in-out;
+  border-radius: 3px;
+  background-repeat: none;
+  color: white;
+  font-size: 4rem;
+  padding: 2rem;
+  padding-top: 0rem;
+  text-align: center;
+  line-height: 4.5rem;
+}
+
+.about {
+  display: flex;
+  background-image: url(/images/back.png);
+  margin-left: 3rem;
+  padding-top: 7rem;
+  transition-delay: .3s;
+  align-items: center;
+}
+
+.skills {
+  background-image: url(/images/back.jpg);
+  transition-delay: .5s;
+
+}
+
+.portfolio {
+  background-image: url(/images/background.png);
+  transition-delay: .7s;
+}
+
+.contacts {
+  margin-right: 3rem;
+  transition-delay: .9s;
+
+}
+
+
+.about:hover, .skills:hover, .portfolio:hover, .contacts:hover {
+  transition: all, .2s ease-in-out;
+  transform: scale(1.02)
+}
+
+.letters {
+  color: black;
 }
