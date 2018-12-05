@@ -14,13 +14,19 @@ const vW = document.documentElement.clientWidth
 
 
 
-let aboutPhrase = `Hello, I'm Andrea Mele. I'm a full-stack web developer. Fast load times and lag free interaction, my highest priority. My layouts will work on any device, big or small. Strong preference for easy to use, intuitive UX/UI. Websites don't have to be static, I love making pages come to life.`
+let aboutPhrase = `Hello, I'm Andrea Mele. 
+I'm a full-stack web developer. 
+Fast load times and lag free interaction, my highest priority. 
+My layouts will work on any device, big or small. 
+Strong preference for easy to use, intuitive UX/UI. 
+Websites don't have to be static, I love making pages come to life.`
 let arraySplitText = aboutPhrase.split('')
 let letterNodes = document.createElement('span')
 arraySplitText.forEach(character => {
   let charElement = document.createElement('span')
-  charElement.innerHTML = `${character}`
+  charElement.textContent = `${character}`
   charElement.classList.add('letters')
+  charElement.style.whiteSpace = 'pre'
   charElement.style.position = 'relative'
   charElement.style.fontSize = '3rem'
   charElement.style.opacity = '0'
@@ -28,7 +34,6 @@ arraySplitText.forEach(character => {
   // charElement.style.transitionDelay = `${delay}ms`
   charElement.style.transition = 'all .3s linear'
   letterNodes.appendChild(charElement)
-  // about.style.padding = '30rem'
   // character.style.transition = `all, .5s linear`
 })
 about.appendChild(letterNodes)
@@ -37,10 +42,10 @@ const letters = document.querySelectorAll('.letters')
 const splat = (letter, index) => {
   const randX = Math.round(Math.random() * vW)
   const randY = Math.round(Math.random() * vH)
-  const randSide = Math.round(Math.random()*1) === 0 ? '-' : '+'
+  const randSide = Math.round(Math.random() * 1) === 0 ? '-' : '+'
   letter.style.fontSize = `${Math.round(Math.random() * 40)}px`
-  letter.style.transform = `translate(${randSide+randX}px, ${randSide+randY}px)`
-  letter.style.transitionDelay = `${index*10}ms`
+  letter.style.transform = `translate(${randSide + randX}px, ${randSide + randY}px)`
+  letter.style.transitionDelay = `${index * 10}ms`
 }
 
 
@@ -51,12 +56,12 @@ const divide = () => {
 }
 
 const stitch = () => {
-  letters.forEach(letter =>{
+  letters.forEach(letter => {
     letter.style.fontSize = `25px`
     letter.style.opacity = `1`
     letter.style.transform = `translate(0, 0)`
     letter.style.color = 'white'
-  })  
+  })
 }
 
 
@@ -66,14 +71,15 @@ const goBackTogheter = () => {
   }
 
 }
-let opened = false 
+
+let opened = false
 const changeGreetings = () => {
-  if (opened === false) { 
+  if (opened === false) {
     greetings.style.opacity = '1'
     greetings.style.opacity = '0'
     // greetings.textContent = 'Welcome'
     opened = true
-    setTimeout(()=> changeToWelcome(), 2000)
+    setTimeout(() => requestAnimationFrame(changeToWelcome), 1000)
   }
   else {
     return
@@ -83,7 +89,7 @@ const changeGreetings = () => {
 const changeToWelcome = () => {
   greetings.textContent = 'Welcome'
   greetings.style.opacity = '1'
-  setTimeout(()=> squash(), 2000)
+  setTimeout(() => requestAnimationFrame(squash), 1000)
   divide()
 }
 
@@ -93,7 +99,7 @@ const squash = () => {
   greetings.style.opacity = '0'
   containerCenter.style.height = '0'
   containerCenter.style.border = '1px solid black'
-  setTimeout(()=> requestAnimationFrame(eliminateIntroduction), 1000)
+  setTimeout(() => requestAnimationFrame(eliminateIntroduction), 1000)
 }
 
 const eliminateIntroduction = () => {
@@ -103,11 +109,11 @@ const eliminateIntroduction = () => {
     page.style.width = '40vh'
     page.style.display = 'flex'
   })
-  setTimeout(()=> openMain(), 300)
+  setTimeout(() => openMain(), 300)
 }
 
 const openMain = () => {
-  containerCenter.style.border = 'none'
+  containerCenter.style.border = '.3px solid black'
   containerCenter.style.height = '100vh'
   containerPage.forEach(page => {
     page.style.height = '80vh'
@@ -118,19 +124,37 @@ const openMain = () => {
 
 
 const openAbout = () => {
-
-  skills.style.zIndex = '-2'
-  portfolio.style.zIndex = '-2'
-  contacts.style.zIndex = '-2'
+  skills.textContent = ''
+  portfolio.textContent = ''
+  contacts.textContent = ''
+  skills.style.width = '0'
+  portfolio.style.width = '0'
+  contacts.style.width = '0'
+  skills.style.height = '0'
+  portfolio.style.height = '0'
+  contacts.style.height = '0'
+  skills.style.transform = 'rotate(90deg)'
+  portfolio.style.transform = 'rotate(90deg)'
+  contacts.style.transform = 'rotate(90deg)'
   skills.style.position = 'fixed'
   portfolio.style.position = 'fixed'
   contacts.style.position = 'fixed'
+  skills.style.transform = 'translate(48vw,-30vh)'
+  portfolio.style.transform = 'translate(48vw,-35vh)'
+  contacts.style.transform = 'translate(48vw,-40vh)'
+
+  // skills.style.position = 'fixed'
+  // portfolio.style.position = 'fixed'
+  // contacts.style.position = 'fixed'
   about.style.marginRight = '3rem'
-  setTimeout(()=> requestAnimationFrame(throwLettersIn), 250)
+  about.style.width = '100vw'
+  about.style.width = '100vw'
+  // about.style.padding = '30rem'
+  requestAnimationFrame(throwLettersIn)
 }
 const throwLettersIn = () => {
-  about.style.transform = 'scale(1.05)'
-  about.style.width = '100vw'
+  // about.style.transform = 'scale(1.)'
+  // about.style.width = '100vw'
   letters.forEach(letter => {
     letter.style.opacity = '1'
   })
@@ -147,5 +171,5 @@ const throwLettersIn = () => {
 
 // }
 
-window.addEventListener('click',changeGreetings)
-about.addEventListener('click',openAbout)
+window.addEventListener('click', changeGreetings)
+about.addEventListener('click', openAbout)
