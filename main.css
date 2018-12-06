@@ -378,6 +378,7 @@ fill: rgb(134, 9, 9);
 
 .second-btn {
   display: none;
+  margin: 2rem;
 }
 
 
@@ -392,6 +393,7 @@ fill: rgb(134, 9, 9);
 }
 
 .port-TTT, .port-EAF, .port-this, .port-zone-in {
+  position: relative;
   width: 20vw;
   height: 30vh;
   border: 1px solid rgb(201, 201, 201);
@@ -399,14 +401,80 @@ fill: rgb(134, 9, 9);
   box-shadow: 2px 2px 1px rgb(184, 184, 184);
   background-size: contain;
   background-repeat: no-repeat;
+  transition: all .3s ease-in;
 }
 
 .port-TTT {
   background-image: url(/images/Tic_tac_toe_complete.svg);
+  width: 22vw;
+  height: 32vh;
+  border: 1px solid rgb(201, 201, 201);
+  margin: 1rem;
+  box-shadow: 3px 3px 1px rgb(184, 184, 184);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .port-EAF {
   background-image: url(/images/Screenshot\ 2018-12-07\ 10.06.14.png);
   background-size: cover; 
+}
 
+.port-zone-in {
+  background-image: url(/images/zoneIn.jpg);
+  background-size: cover; 
+}
+
+.port-this {
+  background-image: url(/images/this\ website.png);
+  background-size: cover; 
+}
+
+.port-TTT:hover {
+  background-image: url(/images/Tic_tac_toe_complete.svg);
+  transform: scale(1.1);
+  border: 1px solid rgb(201, 201, 201);
+  margin: 1rem;
+  box-shadow: 3px 3px 1px rgb(184, 184, 184);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.port-EAF:hover {
+  background-image: url(/images/Screenshot\ 2018-12-07\ 10.06.14.png);
+  background-size: cover; 
+  transform: scale(1.1);
+  border: 1px solid rgb(201, 201, 201);
+  margin: 1rem;
+  box-shadow: 3px 3px 1px rgb(184, 184, 184);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.port-zone-in:hover {
+  background-image: url(/images/zoneIn.jpg);
+  background-size: cover; 
+  transform: scale(1.1);
+  border: 1px solid rgb(201, 201, 201);
+  margin: 1rem;
+  box-shadow: 3px 3px 1px rgb(184, 184, 184);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+}
+
+.port-this:hover {
+  background-image: url(/images/this\ website.png);
+  background-size: cover; 
+  border: 1px solid rgb(201, 201, 201);
+  margin: 1rem;
+  box-shadow: 3px 3px 1px rgb(184, 184, 184);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transform: scale(1.1);
 }
