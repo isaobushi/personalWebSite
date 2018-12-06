@@ -16,8 +16,6 @@ const aElemS = document.querySelector('.second-btn')
 
 
 
-
-
 let opened = false
 const changeGreetings = () => {
   if (opened === false) {
@@ -162,7 +160,7 @@ const close = () => {
   let elem = document.querySelector('.bar-in')
   const barGrow = () => {
     let barWidth = 0;
-    let id = setInterval(frame, 35)
+    let id = setInterval(frame, 45)
     function frame() {
       if (barWidth >= 40) {
         elem.textContent = 'COMPLETED!'
@@ -194,25 +192,24 @@ const close = () => {
 const openPortfolio = () => {
   document.querySelector('.initial-center').remove()
   let containerPortfolio = document.createElement('div')
-  let portFolioTileTTT = document.createElement('div')
-  portFolioTileTTT.classList.add('port-TTT')
-  let portFolioTileEAF = document.createElement('div')
-  portFolioTileEAF.classList.add('port-EAF')
-  let portFolioTileZoneIn = document.createElement('div')
-  portFolioTileZoneIn.classList.add('port-zone-in')
-  let portFolioTileThis = document.createElement('div')
-  portFolioTileThis.classList.add('port-this')
-  const portArray = [portFolioTileTTT,portFolioTileEAF,portFolioTileZoneIn,portFolioTileThis]
-  portArray.forEach(port => {
-    containerPortfolio.appendChild(port)
-  })
+  // let portFolioTileTTT = document.createElement('div')
+  // portFolioTileTTT.classList.add('port-TTT')
+  // let portFolioTileEAF = document.createElement('div')
+  // portFolioTileEAF.classList.add('port-EAF')
+  // let portFolioTileZoneIn = document.createElement('div')
+  // portFolioTileZoneIn.classList.add('port-zone-in')
+  // let portFolioTileThis = document.createElement('div')
+  // portFolioTileThis.classList.add('port-this')
+  // const portArray = [portFolioTileTTT,portFolioTileEAF,portFolioTileZoneIn,portFolioTileThis]
+  // portArray.forEach(port => {
+  //   containerPortfolio.appendChild(port)
+  // })
+
+  containerPortfolio.innerHTML ='<a target="_blank" href="https://playtictactoe.org/"> <div class=port-TTT></div></a> <a target="_blank" href="https://eaf.herokuapp.com/"> <div class=port-EAF></div></a> <a target="_blank" href="https://github.com/isaobushi/ZoneIn"> <div class=port-zone-in></div></a> <a target="_blank" href="https://github.com/isaobushi/personalWebSite"><div class=port-this></div></a>'
   containerPortfolio.classList.add('box-portfolio')
-
-
-
   containerHeader.appendChild(containerPortfolio)
-
 }
+
 
 
 const docStyle = document.documentElement.style
