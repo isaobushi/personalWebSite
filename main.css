@@ -4,115 +4,367 @@
   box-sizing: border-box;
   font-size: 10px;
   color: rgb(103, 103, 103);
+  overflow: hidden;
+  font-family: 'lato';
 }
 
+.container-about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+  height: 70vh;
+  background-color: transparent;
+}
+.text-about {
+  font-family: 'lato';
+  width: 70vw;
+  height: 70vh;
+  font-size: 3rem;
+  white-space: pre;
+  text-align: center;
+  background-color: transparent;
+  line-height: 5rem;
+}
+
+.yellow {
+  color: #FDCA40;
+  font-size: 3rem;
+  white-space: pre;
+  text-align: center;
+  background-color: transparent;
+  line-height: 3rem;
+  transition: all .3s ease-in;
+}
+
+.welcome {
+  opacity: 0;
+  color: #FDCA40;
+  white-space: pre;
+  text-align: center;
+  background-color: transparent;
+  line-height: 5rem;
+  font-size: 5rem;
+  animation: andrea;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+
+
+canvas {
+  background-color: transparent;
+}
 
 .initial-header {
   height: 100vh;
   width: 100vw;
-  border: 1px solid black;
+  border: 1px solid rgb(75, 75, 75);
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .initial-center {
   transition: all, .5s ease-in-out;
-  background-color: rgb(254, 254, 254);
+  background-color: transparent;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  border: 1px solid #cacaca;
 }
 
 .greetings {
   display: inline-block;
-  font-size: 4rem;
-  transition: all, .5s ease-in-out;
+  font-size: 6rem;
+  opacity: 0;
+  animation: andrea;
+  animation-delay: .2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  text-align: center;
+  transition: all .3s ease-in;
 }
 
 
-.sphere {
-  transition: all, .5s ease-in-out;
-  width: 6%;
-  height: 6%;
+.who {
+  font-size: 6rem;
+  opacity: 0;
+  animation: andrea;
+  animation-delay: .6s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  color: #FDCA40;
+  text-align: center;
+
+
+}
+
+.sub-intro {
+  opacity: 0;
+  font-size: 3rem;
+  animation: andrea;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  margin: 2rem;
+  animation-fill-mode: forwards;
+  text-align: center;
+}
+.containerIcons {
+  height: 10%;
+  width: 24%;
+}
+
+.gitH {
+  opacity: 0;
+  font-size: 3rem;
+  transition: all .2s ease-in-out;
+  animation: andrea;
+  animation-delay: .2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+  box-shadow: 2px 2px 1px rgb(246, 207, 122);
+  border-radius: 30%;
+  margin: 2rem;
+}
+.gitH:hover, .codewars:hover {
+  opacity: 0;
+  font-size: 3rem;
+  animation: andrea;
+  animation-delay: .2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: none;
+  transition: all .3s ease-in;
+  color: rgba(247, 172, 52, 0.76);
+}
+
+.codewars:hover {
+fill: rgb(134, 9, 9);
+}
+
+.codewars {
+  opacity: 0;
+  fill: rgb(75, 75, 75);
+  width: 2.8rem;
+  height: 2.8rem;
+  box-shadow: 2px 2px 1px rgb(246, 207, 122);
+  border-radius: 30%;
+  animation: andrea;
+  animation-delay: .2s;
+  animation-duration: 2s;
+  transition: all .3s ease-in;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+}
+#particles-js {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+.call-to-action {
+
+}
+@keyframes andrea {
+  0% {opacity:0}
+  100%{opacity: 1;}
+}
+
+ .sphere {
+  transition: all, .1s ease-in-out;
+  width: 2%;
+  height: 2%;
   border: 0.3px solid black;
   border-radius: 50%;
-  animation: sphere 1.5s infinite;
+  animation: sphere .3s infinite;
   animation-timing-function: cubic-bezier(.04,.92,.66,1.4);
   animation-delay: .3s;
-  margin-left: 15rem;
+  margin-left: 20rem;
   position: fixed;
-}
+  border: 1px solid rgb(rgb(216, 216, 216));
+} 
 
 
 @keyframes sphere {
-  0%    {transform: translateY(0px)}
-  0%    {background-image: linear-gradient(to right, #2c3e50, #4ca1af)}  
-  0%    {clip-path: polygon(45% 0, 60% 0, 70% 100%, 0 70%)}
-
-  50% {transform: translateY(-80px)} 
-  50%     {clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)}
-
-  100%    {transform: translateY(0px)} 
-  100%    {background-image: linear-gradient(to right, #2c3e50, #4ca1af)}  
-  100%    {clip-path: polygon(45% 0, 60% 0, 70% 100%, 0 70%)}
+  0%    {transform: translateY(-1px)}
+  50% {transform: translateY(-8px)} 
+  100%    {transform: translateY(-1px)} 
 }
 
 
 .container-page {
   display: none;
-  border: 1px solid black;
+  border: 1px solid rgb(66, 66, 66);
   height: 0vh;
   width: 0vw;
   opacity: 0;
-  box-shadow: none;
+
   margin: .1rem;
   transition: all, .5s ease-in-out;
   border-radius: 3px;
   background-repeat: none;
-  color: white;
-  font-size: 4rem;
+  color: rgb(148, 148, 148);
+  font-size: 2rem;
   padding: 2rem;
   padding-top: 0rem;
   text-align: center;
   line-height: 4.5rem;
+  border-top: 1px solid rgba(126, 126, 126, 0.514);
+  margin: auto;
+  position: absolute;
 }
 
 .about {
   display: flex;
-  background-image: url(/images/back.png);
-  margin-left: 3rem;
+  background: #bdc3c7;
+  background: -webkit-linear-gradient(to right, #cacaca, #2c3e50);
+  background: linear-gradient(to right, #cacaca, #FDCA40); 
+  margin-left: auto;
   padding-top: 7rem;
-  transition-delay: .3s;
   align-items: center;
+  overflow: visible;
+  transition: all .8 linear;
+  position:absolute;
+  
+}
+
+.box-btn-portfolio {
+  display: flex;
+  justify-content: center;
 }
 
 .skills {
-  background-image: url(/images/back.jpg);
-  transition-delay: .5s;
-
+  text-align: center;
+  opacity: 0;
+  width: 50%;
+  height: 45%;
+  border-radius: 7px;
+  background-image: linear-gradient(to left, transparent, rgba(250, 232, 182, 0.5));
+  transition: all, .7s ease-in;
+  transition-delay: .3s;
+  margin: auto;
+  position:absolute;
+  font-size: 3rem;
+}
+.cursor {
+  display: inline-block;
+  font-size: 5rem;
+  animation: sphere .3s infinite;
+  animation-timing-function: cubic-bezier(.04,.92,.66,1.4);
+  animation-delay: .3s;
 }
 
-.portfolio {
-  background-image: url(/images/background.png);
-  transition-delay: .7s;
+.dots {
+  display: inline-block;
+  font-size: 4rem;
+  animation: andrea .5s infinite;
+  line-height: 3rem;
+  animation-timing-function: cubic-bezier(.04,.92,.66,1.4);
+  animation-delay: .5s;
 }
 
-.contacts {
-  margin-right: 3rem;
-  transition-delay: .9s;
+.box-skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
 
+.text-skills {
+  margin: auto;
+  font-size: 3rem;
+  display: flex;
+}
+
+.bar-out {
+  width: 40vw;
+  height: 5vh;
+  background-color: rgb(230, 230, 230);
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.bar-in {
+  border-radius: 5px;
+  margin-top: 0rem;
+  width: 100%;
+  height: 100%;
+  background: #FDCA40;
+  line-height: 3rem;
 }
 
 
-.about:hover, .skills:hover, .portfolio:hover, .contacts:hover {
-  transition: all, .2s ease-in-out;
-  transform: scale(1.02)
+.btn-portfolio {
+  width: 10vw;
+  height: 6vh;
+  border-radius: 5px;
+  background: #FDCA40;
+  font-size: 2rem;
+  color: white; 
+  outline: none;
+  margin: 0 auto;
+  margin-right: auto;
 }
 
-.letters {
-  color: black;
+.btn-hero,.btn-skills {
+  width: 10%;
+  animation: andrea;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+	position: relative;
+	display: inline-block;
+	padding: 1.2em 2em;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+	color: white;
 }
+.btn-hero::before, .btn-skills::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: linear-gradient(135deg, #FDCA40, #eeeeee);
+		border-radius: 4px;
+		transition: box-shadow .5s ease, transform .2s ease; 
+		will-change: transform;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+		transform:
+			translateY(var(--ty, 0))
+			rotateX(var(--rx, 0))
+			rotateY(var(--ry, 0))
+			translateZ(var(--tz, -12px));
+
+}
+.btn-hero:hover::before, .btn-skills:hover::before {
+		box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+	}
+	
+.btn-hero::after,.btn-skills::after {
+		position: relative;
+		display: inline-block;
+		content: attr(data-title);
+		transition: transform .2s ease; 
+		font-weight: bold;
+		letter-spacing: .01em;
+		will-change: transform;
+		transform:
+			translateY(var(--ty, 0))
+			rotateX(var(--rx, 0))
+			rotateY(var(--ry, 0));
+}
+
+.btn-skills {
+  width: 35%;
+}
+
