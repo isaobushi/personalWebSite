@@ -243,7 +243,7 @@ fill: rgb(134, 9, 9);
   text-align: center;
   opacity: 0;
   width: 50%;
-  height: 45%;
+  height: 50%;
   border-radius: 7px;
   background-image: linear-gradient(to left, transparent, rgba(250, 232, 182, 0.5));
   transition: all, .7s ease-in;
@@ -312,8 +312,19 @@ fill: rgb(134, 9, 9);
   margin: 0 auto;
   margin-right: auto;
 }
+.btn-portfolioHover {
+  width: 11vw;
+  height: 7vh;
+  border-radius: 5px;
+  background: #FDCA40;
+  font-size: 3rem;
+  color: black; 
+  outline: none;
+  margin: 0 auto;
+  margin-right: auto;
+}
 
-.btn-hero,.btn-skills {
+.btn-hero {
   width: 10%;
   animation: andrea;
   animation-duration: 2s;
@@ -325,9 +336,10 @@ fill: rgb(134, 9, 9);
 	text-align: center;
 	cursor: pointer;
 	user-select: none;
-	color: white;
+  color: white;
+  
 }
-.btn-hero::before, .btn-skills::before {
+.btn-hero::before {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -346,11 +358,11 @@ fill: rgb(134, 9, 9);
 			translateZ(var(--tz, -12px));
 
 }
-.btn-hero:hover::before, .btn-skills:hover::before {
+.btn-hero:hover::before {
 		box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
 	}
 	
-.btn-hero::after,.btn-skills::after {
+.btn-hero::after {
 		position: relative;
 		display: inline-block;
 		content: attr(data-title);
@@ -364,7 +376,37 @@ fill: rgb(134, 9, 9);
 			rotateY(var(--ry, 0));
 }
 
-.btn-skills {
-  width: 35%;
+.second-btn {
+  display: none;
 }
 
+
+.box-portfolio {
+  height: 80vh;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to left, transparent, rgba(250, 232, 182, 0.5));
+
+}
+
+.port-TTT, .port-EAF, .port-this, .port-zone-in {
+  width: 20vw;
+  height: 30vh;
+  border: 1px solid rgb(201, 201, 201);
+  margin: 1rem;
+  box-shadow: 2px 2px 1px rgb(184, 184, 184);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.port-TTT {
+  background-image: url(/images/Tic_tac_toe_complete.svg);
+}
+
+.port-EAF {
+  background-image: url(/images/Screenshot\ 2018-12-07\ 10.06.14.png);
+  background-size: cover; 
+
+}

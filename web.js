@@ -8,9 +8,12 @@ const vH = document.documentElement.clientHeight
 const vW = document.documentElement.clientWidth
 const subIntro = document.querySelector('.sub-intro')
 const iconsBox = document.querySelector('.containerIcons')
-const btnSkills = document.querySelector('.btn-skills')
+const btnSkills = document.querySelector('.button-container')
 const textAbout = document.querySelector('.text-about')
 const aElem = document.querySelector('.btn-hero')
+const aElemF = document.querySelector('.first-btn')
+const aElemS = document.querySelector('.second-btn')
+
 
 
 
@@ -46,13 +49,16 @@ const eliminateIntroduction = () => {
   greetings.style.display = 'none'
   subIntro.style.display = 'none'
   subIntro.style.display = 'none'
-  aElem.style.display = 'none'
+  aElemF.style.display = 'none'
  
   requestAnimationFrame(openMain)
 }
 
 const openMain = () => {
   containerCenter.style.border = '.3px solid #cacaca'
+  aElemS.style.display = 'flex'
+  aElemS.style.justifyContent = 'center'
+  document.querySelector('.btn-hero').style.width = '20rem'
   containerCenter.style.height = '100vh'
   // iconsBox.style.transform = 'translateY(50rem)'
   let containerAbout = document.createElement('div')
@@ -151,7 +157,7 @@ const close = () => {
   skillsIcons.style.gridGap = '3rem 7rem'
   skillsIcons.style.width = '50vw'
   skillsIcons.style.margin= '2%'
-  skillsIcons.style.height = '20vh'
+  skillsIcons.style.height = '25vh'
   skills.appendChild(skillsIcons)
   let elem = document.querySelector('.bar-in')
   const barGrow = () => {
@@ -160,11 +166,13 @@ const close = () => {
     function frame() {
       if (barWidth >= 40) {
         elem.textContent = 'COMPLETED!'
+        document.querySelector('.dots').textContent = ''
+        document.querySelector('.text-skills').textContent = 'Skills installed succesfully'
+        document.querySelector('.text-skills').innerHTML = '&#128406;'
         let containerBtnPortfolio = document.createElement('div')
         let buttonPortfolio = document.createElement('button')
         buttonPortfolio.classList = 'btn-portfolio'
         containerBtnPortfolio.classList = 'box-btn-portfolio'
-
         buttonPortfolio.textContent = 'Portfolio'
         buttonPortfolio.addEventListener('click', closeSkills)
         containerBtnPortfolio.appendChild(buttonPortfolio)
@@ -185,6 +193,24 @@ const close = () => {
 
 const openPortfolio = () => {
   document.querySelector('.initial-center').remove()
+  let containerPortfolio = document.createElement('div')
+  let portFolioTileTTT = document.createElement('div')
+  portFolioTileTTT.classList.add('port-TTT')
+  let portFolioTileEAF = document.createElement('div')
+  portFolioTileEAF.classList.add('port-EAF')
+  let portFolioTileZoneIn = document.createElement('div')
+  portFolioTileZoneIn.classList.add('port-zone-in')
+  let portFolioTileThis = document.createElement('div')
+  portFolioTileThis.classList.add('port-this')
+  const portArray = [portFolioTileTTT,portFolioTileEAF,portFolioTileZoneIn,portFolioTileThis]
+  portArray.forEach(port => {
+    containerPortfolio.appendChild(port)
+  })
+  containerPortfolio.classList.add('box-portfolio')
+
+
+
+  containerHeader.appendChild(containerPortfolio)
 
 }
 
@@ -223,4 +249,4 @@ document.body.onmouseup = function(e) {
 }
 
 aElem.addEventListener('click', changeGreetings)
-btnSkills.addEventListener('click', closeFirstPage)
+aElemS.addEventListener('click', closeFirstPage)
