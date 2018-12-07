@@ -134,7 +134,7 @@ const close = () => {
   rubyOnRailsIcons.style.backgroundImage = `url(/images/Ruby_On_Rails_logo.svg)`
   nodeJS.style.backgroundImage = `url(/images/node.svg)`
   postgreSqlIcons.style.backgroundImage = `url(/images/psql.png)`
-  sassIcons.style.backgroundImage = `url(/images/psql.png)`
+  sassIcons.style.backgroundImage = `url(/images/Sass_logo.svg)`
 
 
   arrSkills.forEach(skill => {
