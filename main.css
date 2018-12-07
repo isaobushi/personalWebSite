@@ -12,14 +12,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60vw;
-  height: 70vh;
+  width: 60%;
+  height: 70%;
   background-color: transparent;
 }
 .text-about {
   font-family: 'lato';
-  width: 70vw;
-  height: 70vh;
+  width: 100%;
+  height: 100%;
   font-size: 3rem;
   white-space: pre;
   text-align: center;
@@ -398,7 +398,7 @@ fill: rgb(134, 9, 9);
 
 .port-TTT, .port-EAF, .port-this, .port-zone-in {
   border-radius: 10px;
-
+  opacity: 0;
   position: relative;
   width: 20vw;
   height: 30vh;
@@ -408,6 +408,9 @@ fill: rgb(134, 9, 9);
   background-size: contain;
   background-repeat: no-repeat;
   transition: all .3s ease-in;
+  animation: andrea;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
 .port-TTT {
@@ -419,22 +422,29 @@ fill: rgb(134, 9, 9);
   box-shadow: 3px 3px 1px rgb(184, 184, 184);
   background-size: cover; 
   background-repeat: no-repeat;
+  animation-delay: .3s;
   cursor: pointer;
 }
 
 .port-EAF {
   background-image: url(/images/Screenshot\ 2018-12-07\ 10.06.14.png);
   background-size: cover; 
+  animation-delay: .4s;
+
 }
 
 .port-zone-in {
   background-image: url(/images/zoneIn.jpg);
   background-size: cover; 
+  animation-delay: .5s;
+
 }
 
 .port-this {
   background-image: url(/images/this\ website.png);
-  background-size: cover; 
+  background-size: cover;
+  animation-delay: .6s;
+ 
 }
 
 .port-TTT:hover {
