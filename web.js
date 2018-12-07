@@ -30,6 +30,7 @@ const changeGreetings = () => {
 }
 
 const changeToWelcome = () => {
+  aElemF.style.display = 'none'
   greetings.innerHTML = '<h1 class=welcome>Welcome</h1>'
   setTimeout(() => requestAnimationFrame(squash), 1000)
 }
@@ -47,7 +48,6 @@ const eliminateIntroduction = () => {
   greetings.style.display = 'none'
   subIntro.style.display = 'none'
   subIntro.style.display = 'none'
-  aElemF.style.display = 'none'
  
   requestAnimationFrame(openMain)
 }
@@ -192,22 +192,16 @@ const close = () => {
 const openPortfolio = () => {
   document.querySelector('.initial-center').remove()
   let containerPortfolio = document.createElement('div')
-  // let portFolioTileTTT = document.createElement('div')
-  // portFolioTileTTT.classList.add('port-TTT')
-  // let portFolioTileEAF = document.createElement('div')
-  // portFolioTileEAF.classList.add('port-EAF')
-  // let portFolioTileZoneIn = document.createElement('div')
-  // portFolioTileZoneIn.classList.add('port-zone-in')
-  // let portFolioTileThis = document.createElement('div')
-  // portFolioTileThis.classList.add('port-this')
-  // const portArray = [portFolioTileTTT,portFolioTileEAF,portFolioTileZoneIn,portFolioTileThis]
-  // portArray.forEach(port => {
-  //   containerPortfolio.appendChild(port)
-  // })
+  let btnGoBack = document.createElement('button')
+  btnGoBack.classList.add('btn-go-back')
+  btnGoBack.classList.add('btn-hero')
 
-  containerPortfolio.innerHTML ='<a target="_blank" href="https://playtictactoe.org/"> <div class=port-TTT></div></a> <a target="_blank" href="https://eaf.herokuapp.com/"> <div class=port-EAF></div></a> <a target="_blank" href="https://github.com/isaobushi/ZoneIn"> <div class=port-zone-in></div></a> <a target="_blank" href="https://github.com/isaobushi/personalWebSite"><div class=port-this></div></a>'
+  btnGoBack.setAttribute('data-title','Home')
+  containerPortfolio.innerHTML ='<a target="_blank" href="https://github.com/isaobushi/Tic-Tac-Toe"> <div class=port-TTT></div></a> <a target="_blank" href="https://eaf.herokuapp.com/"> <div class=port-EAF></div></a> <a target="_blank" href="https://github.com/isaobushi/ZoneIn"> <div class=port-zone-in></div></a> <a target="_blank" href="https://github.com/isaobushi/personalWebSite"><div class=port-this></div></a>'
   containerPortfolio.classList.add('box-portfolio')
   containerHeader.appendChild(containerPortfolio)
+  containerHeader.appendChild(btnGoBack)
+  containerHeader.style.flexDirection = 'column'
 }
 
 

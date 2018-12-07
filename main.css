@@ -168,9 +168,7 @@ fill: rgb(134, 9, 9);
   height: 100vh;
   position: absolute;
 }
-.call-to-action {
 
-}
 @keyframes andrea {
   0% {opacity:0}
   100%{opacity: 1;}
@@ -204,7 +202,6 @@ fill: rgb(134, 9, 9);
   height: 0vh;
   width: 0vw;
   opacity: 0;
-
   margin: .1rem;
   transition: all, .5s ease-in-out;
   border-radius: 3px;
@@ -305,20 +302,22 @@ fill: rgb(134, 9, 9);
 .btn-portfolio {
   width: 10vw;
   height: 6vh;
-  border-radius: 5px;
+  border-radius: 2px;
   background-image: linear-gradient(135deg, #FDCA40, #eeeeee);  
   color: white; 
   outline: none;
   margin: 0 auto;
   margin-right: auto;
+  transition: all, .3s ease-in;
+  box-shadow: 2px 2px 2px grey;
+
 }
-.btn-portfolioHover {
+.btn-portfolio:hover {
   width: 11vw;
   height: 7vh;
   border-radius: 5px;
-  background: #FDCA40;
-  font-size: 3rem;
-  color: black; 
+  background-image: linear-gradient(135deg, #FDCA40, #eeeeee);  
+  color: white; 
   outline: none;
   margin: 0 auto;
   margin-right: auto;
@@ -377,22 +376,29 @@ fill: rgb(134, 9, 9);
 }
 
 .second-btn {
+  width: 30%;
   display: none;
   margin: 2rem;
+  font-weight: 700;
+  box-shadow: 2px 2px 2px grey;
 }
 
 
 .box-portfolio {
+  border-radius: 10px;
   height: 80vh;
   width: 90vw;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(to left, transparent, rgba(250, 232, 182, 0.5));
+  transition: all .3 ease-in;
 
 }
 
 .port-TTT, .port-EAF, .port-this, .port-zone-in {
+  border-radius: 10px;
+
   position: relative;
   width: 20vw;
   height: 30vh;
@@ -477,5 +483,17 @@ fill: rgb(134, 9, 9);
   background-size: cover; 
 
   cursor: pointer;
+  transform: scale(1.1);
+}
+
+
+.btn-go-back {
+  margin: 1rem;
+  border-radius: 2px;
+  outline: none;
+  box-shadow: 2px 2px 2px grey;
+}
+
+.btn-go-back:hover {
   transform: scale(1.1);
 }
