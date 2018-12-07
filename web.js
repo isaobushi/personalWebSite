@@ -123,8 +123,7 @@ const close = () => {
   const gitHubIcons = document.createElement('div')
   const rubyOnRailsIcons = document.createElement('div')
 
-
-  const arrSkills = [reactIcons, htmlIcons, jsIcons, rubyIcons, nodeJS, postgreSqlIcons, cssIcons, rubyOnRailsIcons, gitHubIcons, sassIcons]
+  const arrSkills = [htmlIcons,cssIcons,jsIcons,nodeJS,reactIcons,sassIcons,sassIcons,rubyIcons,rubyOnRailsIcons,gitHubIcons]
   reactIcons.style.backgroundImage = `url(/images/React-icon.svg)`
   gitHubIcons.style.backgroundImage = `url(/images/Octicons-mark-github.svg)`
   htmlIcons.style.backgroundImage = `url(/images/HTML5_logo_and_wordmark.svg)`
