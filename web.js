@@ -118,12 +118,11 @@ const close = () => {
   const nodeJS = document.createElement('div')
   const postgreSqlIcons = document.createElement('div')
   const sassIcons = document.createElement('div')
-
   const cssIcons = document.createElement('div')
   const gitHubIcons = document.createElement('div')
   const rubyOnRailsIcons = document.createElement('div')
 
-  const arrSkills = [htmlIcons,cssIcons,jsIcons,nodeJS,reactIcons,sassIcons,sassIcons,rubyIcons,rubyOnRailsIcons,gitHubIcons]
+  const arrSkills = [htmlIcons,cssIcons,jsIcons,nodeJS,reactIcons,sassIcons,rubyIcons,rubyOnRailsIcons,gitHubIcons,postgreSqlIcons]
   reactIcons.style.backgroundImage = `url(/images/React-icon.svg)`
   gitHubIcons.style.backgroundImage = `url(/images/Octicons-mark-github.svg)`
   htmlIcons.style.backgroundImage = `url(/images/HTML5_logo_and_wordmark.svg)`
