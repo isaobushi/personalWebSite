@@ -21,7 +21,7 @@ const changeGreetings = () => {
   if (opened === false) {
     greetings.style.opacity = '1'
     greetings.style.opacity = '0'
-     opened = true
+    opened = true
     setTimeout(() => requestAnimationFrame(changeToWelcome), 1000)
   }
   else {
@@ -48,7 +48,7 @@ const eliminateIntroduction = () => {
   greetings.style.display = 'none'
   subIntro.style.display = 'none'
   subIntro.style.display = 'none'
- 
+
   requestAnimationFrame(openMain)
 }
 
@@ -62,7 +62,7 @@ const openMain = () => {
   let containerAbout = document.createElement('div')
   let textAbout = document.createElement('div')
   containerAbout.classList.add('.container-about')
-  textAbout.innerHTML =`
+  textAbout.innerHTML = `
   I'm a full-stack web developer.
   Fast load times and lag free <span class='yellow'>interaction</span>, 
   my highest priority. 
@@ -86,11 +86,11 @@ const close = () => {
   const destroy = () => {
     skills.remove()
     setTimeout(() => requestAnimationFrame(openPortfolio), 1000)
-    
+
   }
   const closeSkills = () => {
     skills.style.height = '0vh'
-    setTimeout(()=> requestAnimationFrame(destroy), 1000)
+    setTimeout(() => requestAnimationFrame(destroy), 1000)
   }
 
   document.querySelector('.initial-center').lastChild.remove()
@@ -109,7 +109,7 @@ const close = () => {
       <div class="bar-in"> </div> 
     </div> 
   </div>`
-  
+
   let skillsIcons = document.createElement('div')
   const reactIcons = document.createElement('div')
   const htmlIcons = document.createElement('div')
@@ -124,7 +124,7 @@ const close = () => {
   const rubyOnRailsIcons = document.createElement('div')
 
 
-  const arrSkills = [reactIcons, htmlIcons, jsIcons, rubyIcons, nodeJS, postgreSqlIcons,cssIcons,rubyOnRailsIcons,gitHubIcons, sassIcons]
+  const arrSkills = [reactIcons, htmlIcons, jsIcons, rubyIcons, nodeJS, postgreSqlIcons, cssIcons, rubyOnRailsIcons, gitHubIcons, sassIcons]
   reactIcons.style.backgroundImage = `url(/images/React-icon.svg)`
   gitHubIcons.style.backgroundImage = `url(/images/Octicons-mark-github.svg)`
   htmlIcons.style.backgroundImage = `url(/images/HTML5_logo_and_wordmark.svg)`
@@ -136,7 +136,7 @@ const close = () => {
   postgreSqlIcons.style.backgroundImage = `url(/images/psql.png)`
   sassIcons.style.backgroundImage = `url(/images/psql.png)`
 
-  
+
   arrSkills.forEach(skill => {
     skill.classList = 'skill-icon'
     skill.style.backgroundColor = 'transparent'
@@ -151,10 +151,10 @@ const close = () => {
   skillsIcons.classList = 'skills-icons-box'
   skillsIcons.style.display = 'grid'
   skillsIcons.style.gridTemplateColumns = '5rem 5rem 5rem 5rem 5rem'
-  skillsIcons.style.gridTemplateRows = '5rem 5rem' 
+  skillsIcons.style.gridTemplateRows = '5rem 5rem'
   skillsIcons.style.gridGap = '3rem 7rem'
   skillsIcons.style.width = '50vw'
-  skillsIcons.style.margin= '2%'
+  skillsIcons.style.margin = '2%'
   skillsIcons.style.height = '25vh'
   skills.appendChild(skillsIcons)
   let elem = document.querySelector('.bar-in')
@@ -178,8 +178,7 @@ const close = () => {
         clearInterval(id);
       } else {
         barWidth++;
-        if (barWidth === 5 || barWidth === 10 || barWidth === 15 || barWidth === 20 || barWidth === 25 || barWidth === 28|| barWidth === 30 || barWidth === 34  || barWidth === 35  || barWidth === 40)
-        {skillsIcons.appendChild(arrSkills.shift())}
+        if (barWidth === 5 || barWidth === 10 || barWidth === 15 || barWidth === 20 || barWidth === 25 || barWidth === 28 || barWidth === 30 || barWidth === 34 || barWidth === 35 || barWidth === 40) { skillsIcons.appendChild(arrSkills.shift()) }
         // elem.style.backgroundColor = '#16a085'
         elem.style.width = `${barWidth}vw`
       }
@@ -196,8 +195,8 @@ const openPortfolio = () => {
   btnGoBack.classList.add('btn-go-back')
   btnGoBack.classList.add('btn-hero')
 
-  btnGoBack.setAttribute('data-title','Home')
-  containerPortfolio.innerHTML ='<a target="_blank" href="https://github.com/isaobushi/Tic-Tac-Toe"> <div class=port-TTT></div></a> <a target="_blank" href="https://eaf.herokuapp.com/"> <div class=port-EAF></div></a> <a target="_blank" href="https://github.com/isaobushi/ZoneIn"> <div class=port-zone-in></div></a> <a target="_blank" href="https://github.com/isaobushi/personalWebSite"><div class=port-this></div></a>'
+  btnGoBack.setAttribute('data-title', 'Home')
+  containerPortfolio.innerHTML = '<a target="_blank" href="https://github.com/isaobushi/Tic-Tac-Toe"> <div class=port-TTT></div></a> <a target="_blank" href="https://eaf.herokuapp.com/"> <div class=port-EAF></div></a> <a target="_blank" href="https://github.com/isaobushi/ZoneIn"> <div class=port-zone-in></div></a> <a target="_blank" href="https://github.com/isaobushi/personalWebSite"><div class=port-this></div></a>'
   containerPortfolio.classList.add('box-portfolio')
   containerHeader.appendChild(containerPortfolio)
   containerHeader.appendChild(btnGoBack)
@@ -209,34 +208,34 @@ const openPortfolio = () => {
 const docStyle = document.documentElement.style
 const boundingClientRect = aElem.getBoundingClientRect()
 
-aElem.onmousemove = function(e) {
+aElem.onmousemove = function (e) {
 
-	const x = e.clientX - boundingClientRect.left
-	const y = e.clientY - boundingClientRect.top
-	
-	const xc = boundingClientRect.width/2
-	const yc = boundingClientRect.height/2
-	
-	const dx = x - xc
-	const dy = y - yc
-	
-	docStyle.setProperty('--rx', `${ dy/-1 }deg`)
-	docStyle.setProperty('--ry', `${ dx/10 }deg`)
-	
+  const x = e.clientX - boundingClientRect.left
+  const y = e.clientY - boundingClientRect.top
+
+  const xc = boundingClientRect.width / 2
+  const yc = boundingClientRect.height / 2
+
+  const dx = x - xc
+  const dy = y - yc
+
+  docStyle.setProperty('--rx', `${dy / -1}deg`)
+  docStyle.setProperty('--ry', `${dx / 10}deg`)
+
 }
 
-aElem.onmouseleave = function(e) {	
-	docStyle.setProperty('--ty', '0')
-	docStyle.setProperty('--rx', '0')
-	docStyle.setProperty('--ry', '0')	
+aElem.onmouseleave = function (e) {
+  docStyle.setProperty('--ty', '0')
+  docStyle.setProperty('--rx', '0')
+  docStyle.setProperty('--ry', '0')
 }
 
-aElem.onmousedown = function(e) {
-	docStyle.setProperty('--tz', '-25px')
+aElem.onmousedown = function (e) {
+  docStyle.setProperty('--tz', '-25px')
 }
-document.body.onmouseup = function(e) {
-	
-	docStyle.setProperty('--tz', '-12px')
+document.body.onmouseup = function (e) {
+
+  docStyle.setProperty('--tz', '-12px')
 }
 
 aElem.addEventListener('click', changeGreetings)
